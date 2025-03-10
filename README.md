@@ -1,1 +1,1 @@
-# Rock-Paper-Scissors
+A simple Javascript game of Rock, Paper, Scissors that is run in the console.
