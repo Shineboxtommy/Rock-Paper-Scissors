@@ -13,3 +13,10 @@ let getComputerChoice = () =>
 };
 
 console.log(getComputerChoice()); // Returns 'Rock', 'Paper', or 'Scissors'
+
+let getHumanChoice = () => 
+{
+    let humanChoice = prompt('Choose Rock, Paper, or Scissors').toLowerCase();
+    console.log(humanChoice);
+}
+
