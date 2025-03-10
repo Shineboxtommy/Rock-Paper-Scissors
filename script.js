@@ -1,14 +1,21 @@
 
 
+let humanScore = 0;
+let computerScore = 0;
+
+
+
+
+
 //Create Function named Get Computer Choice
 
 let getComputerChoice = () => 
 {
     let randomNumber = Math.floor(Math.random() * 3) // Returns a value of 0, 1, or 2
     console.log(randomNumber);
-    return  randomNumber === 0 ? 'Rock'
-    : randomNumber === 1 ? 'Paper'
-    : randomNumber === 2 ? 'Scissors'
+    return  randomNumber === 0 ? 'rock'
+    : randomNumber === 1 ? 'paper'
+    : randomNumber === 2 ? 'scissors'
     : 'Invalid Choice';
 };
 
@@ -20,3 +27,31 @@ let getHumanChoice = () =>
     console.log(humanChoice);
 }
 
+
+let playRound = (humanChoice, computerChoice) => 
+{
+    if (humanChoice === computerChoice)
+    {
+        console.log(`It's a tie! You both chose ${humanChoice}`);
+    }
+    else if (humanChoice === 'rock' && computerChoice === 'scissors')
+    {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    }
+    else if (humanChoice === 'paper' && computerChoice === 'rock')
+    {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    }
+    else if (humanChoice === 'scissors' && computerChoice === 'paper')
+    {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    }
+    else
+    {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+    }
+}
