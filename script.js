@@ -57,21 +57,20 @@ let playGame = () =>
     for (let i = 0; i < 5; i++)
     {
         let humanChoice = getHumanChoice();
-        console.log(humanChoice);
         let computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     }
     if (humanScore > computerScore)
     {
-        console.log(`You win! ${humanScore} to ${computerScore}`);
+        alert(`You win! ${humanScore} to ${computerScore}`);
     }
     else if (humanScore === computerScore)
     {
-        console.log(`It's a tie! ${humanScore} to ${computerScore}`);
+        alert(`It's a tie! ${humanScore} to ${computerScore}`);
     }
     else
     {
-        console.log(`You lose! ${computerScore} to ${humanScore}`);
+       alert(`You lose! ${computerScore} to ${humanScore}`);
     }
 }
 
