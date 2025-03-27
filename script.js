@@ -52,26 +52,68 @@ let playRound = (humanChoice, computerChoice) =>
     }
 }
 
-let playGame = () =>
-{
-    for (let i = 0; i < 5; i++)
-    {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
-    if (humanScore > computerScore)
-    {
-        alert(`You win! ${humanScore} to ${computerScore}`);
-    }
-    else if (humanScore === computerScore)
-    {
-        alert(`It's a tie! ${humanScore} to ${computerScore}`);
-    }
-    else
-    {
-       alert(`You lose! ${computerScore} to ${humanScore}`);
-    }
-}
+// let playGame = () =>
+// {
+//     for (let i = 0; i < 5; i++)
+//     {
+//         let humanChoice = getHumanChoice();
+//         let computerChoice = getComputerChoice();
+//         playRound(humanChoice, computerChoice);
+//     }
+//     if (humanScore > computerScore)
+//     {
+//         alert(`You win! ${humanScore} to ${computerScore}`);
+//     }
+//     else if (humanScore === computerScore)
+//     {
+//         alert(`It's a tie! ${humanScore} to ${computerScore}`);
+//     }
+//     else
+//     {
+//        alert(`You lose! ${computerScore} to ${humanScore}`);
+//     }
+// }
 
-playGame();
+//Reference to the body of the page
+const body = document.querySelector("body");
+const button1 = document.createElement("button");
+const button2 = document.createElement("button");
+const button3 = document.createElement("button");
+
+button1.innerText = "Rock";
+button2.innerText = "Paper";
+button3.innerText = "Scissors";
+
+body.appendChild(button1);
+body.appendChild(button2);
+body.appendChild(button3);
+
+
+// button1.addEventListener("click", function() {
+//     humanChoice = button1.innerText.toLowerCase();
+//     playRound(humanChoice, getComputerChoice());
+// });
+
+// button2.addEventListener("click", function()
+// {
+//     humanChoice = button2.innerText.toLowerCase();
+//     playRound(humanChoice, getComputerChoice());
+// });
+
+// button3.addEventListener("click", function() 
+// {
+//     humanChoice = button3.innerText.toLowerCase();
+//     playRound(humanChoice, getComputerChoice());
+// });
+
+const buttons = [button1, button2, button3];
+
+buttons.forEach(button => {
+    button.addEventListener("click", function() {
+            //Get the buttons text
+    humanChoice = button.innerText.toLowerCase();
+    playRound(humanChoice, getComputerChoice());
+    });
+});
+
+//playGame();
